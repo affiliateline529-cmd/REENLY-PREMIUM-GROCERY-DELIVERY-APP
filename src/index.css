@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary: #075B3B;
+  --secondary: #A8D58A;
+  --background: #F5F7F0;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --muted: #6B7280;
+}
+
+body {
+  @apply bg-[#F5F7F0] text-[#1A1A1A] antialiased;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.premium-card {
+  @apply bg-white rounded-3xl shadow-sm border border-black/[0.03] transition-all duration-300;
+}
+
+.premium-card:hover {
+  @apply shadow-md -translate-y-0.5;
+}
+
+.btn-primary {
+  @apply bg-[#075B3B] text-white py-3 px-6 rounded-2xl font-semibold transition-all active:scale-[0.98] disabled:opacity-50 cursor-pointer;
+}
+
+.btn-secondary {
+  @apply bg-[#A8D58A] text-[#075B3B] py-3 px-6 rounded-2xl font-semibold transition-all active:scale-[0.98] cursor-pointer;
+}
+
+.input-field {
+  @apply w-full bg-white border border-slate-200 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#075B3B]/20 transition-all;
+}
